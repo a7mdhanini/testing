@@ -8,6 +8,24 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
 
+      endDrawer: Drawer(
+        backgroundColor: Colors.pink,
+        elevation: 199,
+        child: Text('hhashdhashdahs  asdhasdh'),
+      ),
+
+      drawer: Drawer(
+        backgroundColor: Colors.orange,
+        elevation: 199,
+        child: Text('hhashdhashdahs  asdhasdh'),
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.place),
+        onPressed: () {},
+      ),
+
       ///---AppBar
       appBar: AppBar(
         backgroundColor: Colors.pink,
@@ -29,23 +47,19 @@ class ProfilePage extends StatelessWidget {
             },
           ),
         ],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.red),
-          onPressed: () {
-            print('print somthing!');
-          },
-        ),
+        leading: SizedBox(),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.red),
+        //   onPressed: () {
+        //     print('print somthing!');
+        //   },
+        // ),
       ),
 
       ///----Body
       body: Center(
         child: Container(
-          width: 170,
-          height: 50,
-          child: OutlinedButton(
-            child: Text('ok'),
-            onPressed: () {},
-          ),
+          color: Colors.amber,
         ),
       ),
     );
