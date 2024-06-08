@@ -9,43 +9,44 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        title: Text('الصفحة الاولى'),
+        titleSpacing: 1,
+        centerTitle: true,
+        elevation: 100,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.phone, color: Colors.red),
+            onPressed: () {
+              print('call');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.email, color: Colors.red),
+            onPressed: () {
+              print('send');
+            },
+          ),
+        ],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.red),
+          onPressed: () {
+            print('print somthing!');
+          },
+        ),
+      ),
+
+      ///----Body
       body: Center(
         child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Colors.amber,
-            gradient: LinearGradient(
-              tileMode: TileMode.repeated,
-              // stops: [
-              //   0.1,
-              //   0.8,
-              //   0.9,
-              // ],
-              begin: Alignment.bottomLeft,
-              end: Alignment.topLeft,
-              colors: [
-                Colors.green,
-                Colors.red,
-              ],
-            ),
-            // border: Border.all(
-            //   color: Colors.red,
-            //   width: 4,
-            // ),
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.blue.shade200,
-            //     offset: Offset(10, -5),
-            //     blurRadius: 10,
-            //     spreadRadius: 10,
-            //     blurStyle: BlurStyle.normal,
-            //   ),
-            // ],
+          width: 170,
+          height: 50,
+          child: OutlinedButton(
+            child: Text('ok'),
+            onPressed: () {},
           ),
-
-          // margin: EdgeInsets.only(left: 20),
-          // padding: EdgeInsets.only(left: 20),
         ),
       ),
     );
