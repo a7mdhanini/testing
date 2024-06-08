@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,17 +41,13 @@ class HomePage extends StatelessWidget {
 
       ///----Body
       body: Center(
-        child: Container(
-          width: 170,
-          height: 50,
-          child: OutlinedButton(
-            child: Text('ok'),
-            onPressed: () {},
-          ),
+        child: InkWell(
+          onLongPress: () {
+            log('hi');
+          },
+          child: Text('hello'),
         ),
       ),
     );
   }
-
-
 }
