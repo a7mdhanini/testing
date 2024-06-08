@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
@@ -39,12 +40,27 @@ class SearchPage extends StatelessWidget {
 
       ///----Body
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: 170,
           height: 50,
           child: OutlinedButton(
-            child: Text('ok'),
-            onPressed: () {},
+            child: const Text(
+              'Show Bottom Sheet',
+              textAlign: TextAlign.center,
+            ),
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    height: MediaQuery.of(context).size.height  ,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.amber,
+                    child: Text('skjdns'),
+                  );
+                },
+              );
+            },
           ),
         ),
       ),
