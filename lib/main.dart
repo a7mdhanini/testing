@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testing/home_page.dart';
+import 'package:testing/nav_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const NavPage(),
     );
   }
 }

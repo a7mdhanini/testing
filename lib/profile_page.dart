@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,8 +10,8 @@ class HomePage extends StatelessWidget {
 
       ///---AppBar
       appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: Text('Home Page'),
+        backgroundColor: Colors.pink,
+        title: Text('Profile Page'),
         titleSpacing: 1,
         centerTitle: true,
         elevation: 100,
@@ -50,6 +50,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-
 }
