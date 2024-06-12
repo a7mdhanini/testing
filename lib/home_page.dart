@@ -1,6 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:testing/email_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,16 +26,18 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.email, color: Colors.red),
             onPressed: () {
-              print('send');
+              Route route =
+                  MaterialPageRoute(builder: (_) => const EmailPage());
+              Navigator.push(context, route);
             },
           ),
         ],
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.red),
-          onPressed: () {
-            print('print somthing!');
-          },
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back, color: Colors.red),
+        //   onPressed: () {
+        //     print('print somthing!');
+        //   },
+        // ),
       ),
 
       ///----Body

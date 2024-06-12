@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:testing/home_page.dart';
 import 'package:testing/profile_page.dart';
 import 'package:testing/search_page.dart';
+import 'package:testing/settings_page.dart';
 
 class NavPage extends StatefulWidget {
   const NavPage({super.key});
@@ -18,6 +19,7 @@ class _NavPageState extends State<NavPage> {
     const HomePage(),
     const SearchPage(),
     const ProfilePage(),
+    const SettingsPage(),
   ];
 
   @override
@@ -27,8 +29,10 @@ class _NavPageState extends State<NavPage> {
 
       ///----Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.cyan,
-
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.grey,
+        selectedLabelStyle: TextStyle(color: Colors.red),
+        unselectedLabelStyle: TextStyle(color: Colors.grey),
         elevation: 1,
         // iconSize: 80,
         onTap: (index) {
@@ -41,9 +45,7 @@ class _NavPageState extends State<NavPage> {
 
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
@@ -52,6 +54,10 @@ class _NavPageState extends State<NavPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
             label: 'Profile',
           ),
         ],
