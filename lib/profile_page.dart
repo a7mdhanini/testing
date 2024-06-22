@@ -38,13 +38,13 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      endDrawer: Drawer(
+      endDrawer: const Drawer(
         backgroundColor: Colors.pink,
         elevation: 199,
         child: Text('hhashdhashdahs  asdhasdh'),
       ),
 
-      drawer: Drawer(
+      drawer: const Drawer(
         backgroundColor: Colors.orange,
         elevation: 199,
         child: Text('hhashdhashdahs  asdhasdh'),
@@ -52,20 +52,20 @@ class _ProfilePageState extends State<ProfilePage> {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.place),
+        child: const Icon(Icons.place),
         onPressed: () {},
       ),
 
       ///---AppBar
       appBar: AppBar(
         backgroundColor: Colors.pink,
-        title: Text('Profile Page'),
+        title: const Text('Profile Page'),
         titleSpacing: 1,
         centerTitle: true,
         elevation: 100,
         actions: [
           IconButton(
-            icon: Icon(Icons.clear, color: Colors.white),
+            icon: const Icon(Icons.clear, color: Colors.white),
             onPressed: () {
               removeImage();
             },
