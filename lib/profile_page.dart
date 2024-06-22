@@ -1,7 +1,37 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class ProfilePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  File myImage = File('');
+
+  Future<File> selectImage() async {
+    ImagePicker picker = ImagePicker();
+
+    XFile? image = await picker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (image != null) {
+        myImage = File(image.path);
+      }
+    });
+
+    return myImage;
+  }
+
+  void removeImage() {
+    setState(() {
+      myImage = File('');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +65,13 @@ class ProfilePage extends StatelessWidget {
         elevation: 100,
         actions: [
           IconButton(
-            icon: Icon(Icons.phone, color: Colors.red),
+            icon: Icon(Icons.clear, color: Colors.white),
             onPressed: () {
-              print('call');
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.email, color: Colors.red),
-            onPressed: () {
-              print('send');
+              removeImage();
             },
           ),
         ],
-        leading: SizedBox(),
+        leading: const SizedBox(),
         // leading: IconButton(
         //   icon: Icon(Icons.arrow_back, color: Colors.red),
         //   onPressed: () {
@@ -57,10 +81,37 @@ class ProfilePage extends StatelessWidget {
       ),
 
       ///----Body
-      body: Center(
-        child: Container(
-          color: Colors.amber,
-        ),
+      body: Column(
+        children: [
+          const SizedBox(height: 70),
+
+          ///----Image
+          InkWell(
+            onTap: () async {
+              selectImage();
+            },
+            child: Visibility(
+              visible: myImage.path.isEmpty,
+              replacement: Center(
+                child: SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: Image.file(myImage),
+                ),
+              ),
+              child: Center(
+                child: SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

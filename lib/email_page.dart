@@ -17,7 +17,15 @@ class _EmailPageState extends State<EmailPage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: IconButton(
+            
+            icon: Icon(Icons.arrow_back_sharp),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
         body: Padding(
           padding: EdgeInsets.all(15),
           child: Column(
@@ -44,7 +52,7 @@ class _EmailPageState extends State<EmailPage> {
                 onChanged: (newVal) {
                   print(newVal);
                 },
-                readOnly: true,
+                // readOnly: true,
 
                 decoration: InputDecoration(
                   hintText: 'Name',
