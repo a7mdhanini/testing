@@ -3,7 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class EmailPage extends StatefulWidget {
-  const EmailPage({super.key});
+  final int number;
+  const EmailPage({super.key, required this.number});
 
   @override
   State<EmailPage> createState() => _EmailPageState();
@@ -19,7 +20,6 @@ class _EmailPageState extends State<EmailPage> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            
             icon: Icon(Icons.arrow_back_sharp),
             onPressed: () {
               Navigator.pop(context);
@@ -30,6 +30,11 @@ class _EmailPageState extends State<EmailPage> {
           padding: EdgeInsets.all(15),
           child: Column(
             children: [
+              Text(
+                widget.number.toString(),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+
               Text(
                 'Welcome',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

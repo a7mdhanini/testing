@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:testing/profile/profile_controller.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -49,17 +50,19 @@ class SearchPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (BuildContext context) {
-                  return Container(
-                    height: MediaQuery.of(context).size.height  ,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.amber,
-                    child: Text('skjdns'),
-                  );
-                },
-              );
+              Provider.of<ProfileController>(context, listen: false)
+                  .removeImage();
+              // showModalBottomSheet(
+              //   context: context,
+              //   builder: (BuildContext context) {
+              //     return Container(
+              //       height: MediaQuery.of(context).size.height  ,
+              //       width: MediaQuery.of(context).size.width,
+              //       color: Colors.amber,
+              //       child: Text('skjdns'),
+              //     );
+              //   },
+              // );
             },
           ),
         ),

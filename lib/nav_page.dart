@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:testing/home_page.dart';
-import 'package:testing/profile_page.dart';
+import 'package:testing/profile/profile_page.dart';
 import 'package:testing/search_page.dart';
 import 'package:testing/settings_page.dart';
 

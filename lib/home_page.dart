@@ -6,6 +6,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int x = 4;
+
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -27,7 +29,7 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.email, color: Colors.red),
             onPressed: () {
               Route route =
-                  MaterialPageRoute(builder: (_) => const EmailPage());
+                  MaterialPageRoute(builder: (_) => EmailPage(number: x));
               Navigator.push(context, route);
             },
           ),
