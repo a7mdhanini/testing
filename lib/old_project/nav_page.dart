@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:testing/home_page.dart';
-import 'package:testing/profile/profile_page.dart';
-import 'package:testing/search_page.dart';
-import 'package:testing/settings_page.dart';
+import 'package:testing/old_project/home_page.dart';
+import 'package:testing/old_project/profile/profile_page.dart';
+import 'package:testing/old_project/search_page.dart';
+import 'package:testing/old_project/settings_page.dart';
 
 class NavPage extends StatefulWidget {
   const NavPage({super.key});
