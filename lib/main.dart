@@ -1,12 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 import 'package:testing/config/bindings.dart';
+import 'package:testing/firebase_options.dart';
 import 'package:testing/getx/page_1.dart';
-import 'package:testing/old_project/nav_page.dart';
-import 'package:testing/old_project/profile/profile_controller.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
@@ -30,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const Page1(),
+      home: Page1(),
       // ),
     );
   }
