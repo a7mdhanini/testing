@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testing/old_project/profile/profile_controller.dart';
+import 'package:testing/project_1/old_project/profile/profile_controller.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

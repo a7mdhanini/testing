@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:testing/config/bindings.dart';
+import 'package:testing/project_1/config/bindings.dart';
 import 'package:testing/firebase_options.dart';
-import 'package:testing/getx/page_1.dart';
+import 'package:testing/project_1/getx/page_1.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
