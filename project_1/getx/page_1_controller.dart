@@ -1,6 +1,6 @@
 
 import 'package:get/get.dart';
-import 'package:testing/project_1/getx/user_model.dart';
+import 'user_model.dart';
 
 class Page1Controller extends GetxController {
   Rx<UserModel> userModel = UserModel(
