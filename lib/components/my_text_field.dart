@@ -56,6 +56,7 @@ class MyTextField extends StatelessWidget {
         validator: validator,
         controller: controller,
         onChanged: onChanged,
+
         keyboardType: keyboardType,
         maxLines: maxLines,
         minLines: minLines,
@@ -112,7 +113,7 @@ class MyTextField extends StatelessWidget {
           ///----Focused Error Border
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
-            borderSide: const BorderSide(color: Colors.red, width: 1.5),
+            borderSide: BorderSide(color: Colors.red.shade200, width: 1.5),
           ),
         ),
       ),
