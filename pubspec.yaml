@@ -31,12 +31,22 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Designs
   cupertino_icons: ^1.0.6
   carousel_slider: ^4.2.1
-  image_picker: ^1.1.2
+  curved_navigation_bar: ^1.0.6
+
+  # Controllers
   provider: ^6.1.2
   get: ^4.6.6
+
+  # Firebase
   firebase_core: ^3.1.1
+
+  # Config
+  image_picker: ^1.1.2
+
+
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/models/auth_models/user_model.dart';
@@ -55,16 +53,16 @@ class AuthCrl extends GetxController {
   }
 
   Future<void> logIn(BuildContext context) async {
-    FocusScope.of(context).unfocus();
-    loginFormKey.currentState!.save();
+    // FocusScope.of(context).unfocus();
+    // loginFormKey.currentState!.save();
 
-    final isValid = loginFormKey.currentState!.validate();
+    // final isValid = loginFormKey.currentState!.validate();
 
-    if (isValid) {
-      log('Ok');
-    } else {
-      log('Error');
-    }
+    // if (isValid) {
+    //   log('Ok');
+    // } else {
+    //   log('Error');
+    // }
   }
 
   Future<void> signUp() async {}
