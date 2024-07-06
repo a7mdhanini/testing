@@ -12,7 +12,7 @@ class MyButton extends StatelessWidget {
     required this.title,
     this.width,
     this.height,
-    this.onPressed,
+    required this.onPressed,
     super.key,
   });
 

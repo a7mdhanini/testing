@@ -95,13 +95,13 @@ class MyTextField extends StatelessWidget {
           ///----Focused Border
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
-            borderSide: BorderSide.none,
+            borderSide: const BorderSide(color: Colors.grey),
           ),
 
           ///----Enabled Border
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
-            borderSide: BorderSide.none,
+            borderSide: const BorderSide(color: Colors.black),
           ),
 
           ///----Error Border
