@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testing/pages/home_pages/home_page.dart';
-import 'package:testing/pages/search_pages/search_page.dart';
+import 'package:testing/pages/orders_page/orders_page.dart';
 import 'package:testing/pages/settings_pages/settings_page.dart';
 
 class TabNavigationPages extends StatelessWidget {
@@ -20,7 +20,7 @@ class TabNavigationPages extends StatelessWidget {
     if (tabItem == "Page1") {
       child = const HomePage();
     } else if (tabItem == "Page2") {
-      child = const SearchPage();
+      child = const OrdersPage();
     } else if (tabItem == "Page3") {
       child = const SettingsPage();
     } else {

@@ -29,7 +29,7 @@ class NavigationPage extends StatelessWidget {
             // animationDuration: const Duration(seconds: 1),
             items: const [
               Icon(Icons.home, size: 30),
-              Icon(Icons.search, size: 30),
+              Icon(Icons.shopping_bag_outlined, size: 30),
               Icon(Icons.settings, size: 30),
             ],
 

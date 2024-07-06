@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testing/components/my_app_bar.dart';
+import 'package:testing/components/my_settings_button.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -6,9 +8,36 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text('Settings Page')],
+      ///---AppBar
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(56),
+        child: MyAppBar(
+          title: 'Settings',
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MySettingsButton(
+              onTap: () {},
+              title: 'Languages',
+              icon: Icons.language,
+            ),
+            const SizedBox(height: 30),
+            MySettingsButton(
+              onTap: () {},
+              title: 'Contact Us',
+              icon: Icons.contact_support_rounded,
+            ),
+            const SizedBox(height: 30),
+            MySettingsButton(
+              onTap: () {},
+              title: 'Sign Out',
+              icon: Icons.logout,
+            ),
+          ],
+        ),
       ),
     );
   }
