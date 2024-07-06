@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/components/languages_dialog.dart';
 import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_settings_button.dart';
 
@@ -20,7 +21,9 @@ class SettingsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MySettingsButton(
-              onTap: () {},
+              onTap: () {
+                languagesDialog(context);
+              },
               title: 'Languages',
               icon: Icons.language,
             ),
