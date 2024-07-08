@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:testing/components/my_aleart_dialog.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/components/my_text_field.dart';
 import 'package:testing/constants/app_colors.dart';
@@ -27,7 +29,7 @@ class SignUpPage extends StatelessWidget {
                   children: [
                     SizedBox(height: Sizes.statusBarHeight(context)),
                     Padding(
-                      padding: const EdgeInsets.only(top: 100),
+                      padding: const EdgeInsets.only(top: 70),
                       child: SizedBox(
                         width: Sizes.width(context),
                         height: Sizes.height(context) / 5,
@@ -60,6 +62,20 @@ class SignUpPage extends StatelessWidget {
                       },
                       validator: (newVal) {
                         if (!crl.userModel.email.isEmail) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    MyTextField(
+                      width: Sizes.width(context) / 1.2,
+                      hintText: 'User Name',
+                      onChanged: (newVal) {
+                        crl.setName(newVal);
+                      },
+                      validator: (newVal) {
+                        if (!crl.userModel.name.isNotEmpty) {
                           return '';
                         }
                         return null;
@@ -108,12 +124,15 @@ class SignUpPage extends StatelessWidget {
                       },
                     ),
                     const SizedBox(height: 50),
-                    MyButton(
-                      title: 'Create Account',
-                      onPressed: () {
-                        crl.signUp();
-                      },
-                    ),
+                    crl.isLoading
+                        ? LoadingAnimationWidget.beat(
+                            color: AppColors.orange, size: 18)
+                        : MyButton(
+                            title: 'Create Account',
+                            onPressed: () {
+                              crl.signUp(context);
+                            },
+                          ),
                     TextButton(
                       onPressed: () {
                         crl.clearData();

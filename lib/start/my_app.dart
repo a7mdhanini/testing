@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/config/bindings.dart';
- import 'package:testing/pages/nav_pages/navigation_page.dart';
+import 'package:testing/pages/auth_pages/login_page.dart';
+import 'package:testing/pages/nav_pages/navigation_page.dart';
+import 'package:testing/start/init_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const NavigationPage(),
+      home: const InitPage(),
     );
   }
 }
