@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:testing/components/languages_dialog.dart';
 import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_settings_button.dart';
 import 'package:testing/constants/app_colors.dart';
 import 'package:testing/constants/app_sizes.dart';
+import 'package:testing/pages/auth_pages/login_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -57,7 +61,14 @@ class SettingsPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             MySettingsButton(
-              onTap: () {},
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+
+                // Route route =
+                //     MaterialPageRoute(builder: (_) => const LoginPage());
+
+                // Navigator.pushReplacement(context, route);
+              },
               title: 'Sign Out',
               icon: Icons.logout,
             ),

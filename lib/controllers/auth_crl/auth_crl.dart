@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/components/my_aleart_dialog.dart';
+import 'package:testing/constants/app_strings.dart';
 import 'package:testing/models/auth_models/user_model.dart';
 import 'package:testing/pages/nav_pages/navigation_page.dart';
 
@@ -94,12 +95,17 @@ class AuthCrl extends GetxController {
           userModel.id = userCedential.user!.uid;
 
           DocumentReference ref = FirebaseFirestore.instance
-              .collection('users')
+              .collection(AppStrings.users)
               .doc(userCedential.user!.uid);
+ 
 
           ref.set(userModel.toMap()).then((val) {
             log('OK');
           });
+          Route route =
+              MaterialPageRoute(builder: (_) => const NavigationPage());
+
+          Navigator.pushReplacement(context, route);
 
           setIsLoading(false);
         });

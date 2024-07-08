@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/components/my_text_field.dart';
 import 'package:testing/constants/app_colors.dart';
@@ -87,12 +88,15 @@ class LoginPage extends StatelessWidget {
                       },
                     ),
                     const SizedBox(height: 50),
-                    MyButton(
-                      title: 'Login',
-                      onPressed: () {
-                        crl.logIn(context);
-                      },
-                    ),
+                    crl.isLoading
+                        ? LoadingAnimationWidget.beat(
+                            color: AppColors.orange, size: 18)
+                        : MyButton(
+                            title: 'Login',
+                            onPressed: () {
+                              crl.logIn(context);
+                            },
+                          ),
                     TextButton(
                       onPressed: () {
                         crl.clearData();

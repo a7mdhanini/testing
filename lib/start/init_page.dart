@@ -4,8 +4,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/components/my_loading.dart';
+import 'package:testing/constants/app_strings.dart';
 import 'package:testing/controllers/auth_crl/auth_crl.dart';
 import 'package:testing/models/auth_models/user_model.dart';
+import 'package:testing/pages/admin_pages/admin_page.dart';
 import 'package:testing/pages/auth_pages/login_page.dart';
 import 'package:testing/pages/nav_pages/navigation_page.dart';
 
@@ -30,7 +32,7 @@ class InitPage extends StatelessWidget {
                 if (snapShot.hasData) {
                   return StreamBuilder<dynamic>(
                     stream: FirebaseFirestore.instance
-                        .collection('users')
+                        .collection(AppStrings.users)
                         .doc(FirebaseAuth.instance.currentUser!.uid)
                         .snapshots(),
                     builder: (context, userSnapshot) {
@@ -42,7 +44,11 @@ class InitPage extends StatelessWidget {
                           authCrl.userModel =
                               UserModel.fromJson(userSnapshot.data.data());
 
-                          return const NavigationPage();
+                          if (authCrl.userModel.isAdmin) {
+                            return const AdminPage();
+                          } else {
+                            return const NavigationPage();
+                          }
                         }
                       } else {
                         return const MyLoading();
