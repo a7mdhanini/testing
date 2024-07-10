@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/components/my_loading.dart';
@@ -29,6 +28,8 @@ class InitPage extends StatelessWidget {
                 return const MyLoading();
 
               case ConnectionState.active:
+
+                ///---يعني المستخدم عامل تسجيل دخول
                 if (snapShot.hasData) {
                   return StreamBuilder<dynamic>(
                     stream: FirebaseFirestore.instance

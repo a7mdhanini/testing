@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ItemsModel {
   String id;
   String title;
@@ -13,13 +15,24 @@ class ItemsModel {
     required this.image,
   });
 
-  factory ItemsModel.fromJson(Map<String, dynamic> json) {
+  factory ItemsModel.fromMap(Map<String, dynamic> json) {
     return ItemsModel(
       id: json['id'],
       title: json['title'],
       description: json['description'],
       quintity: json['quintity'],
       image: json['image'],
+    );
+  }
+
+  factory ItemsModel.fromQuery(
+      QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+    return ItemsModel(
+      id: doc['id'],
+      title: doc['title'],
+      description: doc['description'],
+      quintity: doc['quintity'],
+      image: doc['image'],
     );
   }
 

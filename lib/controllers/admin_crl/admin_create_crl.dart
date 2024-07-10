@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:testing/constants/app_strings.dart';
+import 'package:testing/controllers/admin_crl/admin_crl.dart';
 import 'package:testing/models/items_model/items_model.dart';
 
 class AdminCreateCrl extends GetxController {
@@ -81,6 +82,12 @@ class AdminCreateCrl extends GetxController {
     itemsModel.id = ref.id;
 
     await ref.set(itemsModel.toMap());
+
+    Get.find<AdminCrl>().itemsList.add(itemsModel);
+
+    Get.find<AdminCrl>().update();
+
+    update();
 
     clearData();
     Navigator.pop(context);
