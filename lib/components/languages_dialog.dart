@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/constants/app_colors.dart';
 import 'package:testing/constants/app_sizes.dart';
+import 'package:testing/controllers/localization_crl.dart';
 
 void languagesDialog(BuildContext context) {
   showDialog(
@@ -22,12 +24,18 @@ void languagesDialog(BuildContext context) {
             const SizedBox(height: 15),
             MyButton(
               title: 'English',
-              onPressed: () {},
+              onPressed: () {
+                Get.find<LocalizationCrl>().setLocal(const Locale('en'));
+                Get.back();
+              },
             ),
             const SizedBox(height: 10),
             MyButton(
               title: 'العربية',
-              onPressed: () {},
+              onPressed: () {
+                Get.find<LocalizationCrl>().setLocal(const Locale('ar'));
+                Get.back();
+              },
             ),
           ],
         ),

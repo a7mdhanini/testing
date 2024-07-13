@@ -1,14 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:testing/components/languages_dialog.dart';
 import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_settings_button.dart';
 import 'package:testing/constants/app_colors.dart';
 import 'package:testing/constants/app_sizes.dart';
 import 'package:testing/controllers/auth_crl/auth_crl.dart';
-import 'package:testing/pages/auth_pages/login_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -17,10 +16,10 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       ///---AppBar
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
         child: MyAppBar(
-          title: 'Settings',
+          title: AppLocalizations.of(context)!.settings,
         ),
       ),
       body: Center(
