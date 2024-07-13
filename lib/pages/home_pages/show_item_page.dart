@@ -1,7 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/constants/app_sizes.dart';
+import 'package:testing/controllers/home_crl/home_crl.dart';
 import 'package:testing/models/items_model/items_model.dart';
 
 class ShowItemPage extends StatelessWidget {
@@ -26,9 +29,12 @@ class ShowItemPage extends StatelessWidget {
             SizedBox(
               height: Sizes.height(context) / 2.5,
               width: Sizes.width(context),
-              child: Image.network(
-                itemsModel.image,
+              child: CachedNetworkImage(
                 fit: BoxFit.cover,
+                imageUrl: itemsModel.image,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
             Padding(
@@ -60,9 +66,15 @@ class ShowItemPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            MyButton(
-              title: 'Order Item',
-              onPressed: () {},
+            GetBuilder<HomeCrl>(
+              builder: (crl) {
+                return MyButton(
+                  title: 'Order Item',
+                  onPressed: () {
+                    crl.orderItem(context, itemsModel);
+                  },
+                );
+              },
             ),
             const SizedBox(height: 30),
           ],

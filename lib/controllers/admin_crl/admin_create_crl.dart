@@ -17,6 +17,8 @@ class AdminCreateCrl extends GetxController {
     description: '',
     quintity: '',
     image: '',
+    userId: '',
+    orderTime: '',
   );
 
   void setTitle(String newVal) {
@@ -101,6 +103,8 @@ class AdminCreateCrl extends GetxController {
       description: '',
       quintity: '',
       image: '',
+      userId: '',
+      orderTime: '',
     );
     itemImage = File('');
     setIsLoading(false);

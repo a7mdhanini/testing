@@ -1,4 +1,4 @@
-// import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing/components/my_app_bar.dart';
@@ -56,18 +56,19 @@ class HomePage extends StatelessWidget {
                               borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(15),
                                 topRight: Radius.circular(15),
-                       ),
-                              // child: CachedNetworkImage(
-                              //   imageUrl: crl.itemsList[index].image,
-                              //   placeholder: (context, url) =>
-                              //       const CircularProgressIndicator(),
-                              //   errorWidget: (context, url, error) =>
-                              //       const Icon(Icons.error),
-                              // ),
-                          child:    Image.network(
-                                crl.itemsList[index].image,
-                                fit: BoxFit.cover,
                               ),
+                              child: CachedNetworkImage(
+                                fit: BoxFit.cover,
+                                imageUrl: crl.itemsList[index].image,
+                                placeholder: (context, url) =>
+                                    const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.error),
+                              ),
+                              // child:    Image.network(
+                              //       crl.itemsList[index].image,
+                              //       fit: BoxFit.cover,
+                              //     ),
                             ),
                           ),
                           Padding(

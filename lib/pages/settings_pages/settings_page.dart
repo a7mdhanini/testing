@@ -7,6 +7,7 @@ import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_settings_button.dart';
 import 'package:testing/constants/app_colors.dart';
 import 'package:testing/constants/app_sizes.dart';
+import 'package:testing/controllers/auth_crl/auth_crl.dart';
 import 'package:testing/pages/auth_pages/login_page.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -38,7 +39,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             Text(
-              'Name Of User',
+              Get.find<AuthCrl>().userModel.name,
               style: TextStyle(
                 color: AppColors.black,
                 fontSize: Sizes.allSizes(context) / 75,
@@ -63,11 +64,6 @@ class SettingsPage extends StatelessWidget {
             MySettingsButton(
               onTap: () {
                 FirebaseAuth.instance.signOut();
-
-                // Route route =
-                //     MaterialPageRoute(builder: (_) => const LoginPage());
-
-                // Navigator.pushReplacement(context, route);
               },
               title: 'Sign Out',
               icon: Icons.logout,
