@@ -56,7 +56,7 @@ class AdminPage extends StatelessWidget {
                       onTap: () {
                         Route route = MaterialPageRoute(
                           builder: (_) => ShowItemPage(
-                            itemId: adminCrl.itemsList[index].id,
+                            itemsModel: adminCrl.itemsList[index],
                           ),
                         );
 

@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:testing/components/my_app_bar.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/constants/app_sizes.dart';
+import 'package:testing/models/items_model/items_model.dart';
 
 class ShowItemPage extends StatelessWidget {
-  final String itemId;
+  final ItemsModel itemsModel;
 
-  const ShowItemPage({required this.itemId, super.key});
+  const ShowItemPage({required this.itemsModel, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       ///---AppBar
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: MyAppBar(
-          title: 'Item ' + itemId,
+          title: '',
         ),
       ),
 
@@ -26,7 +27,7 @@ class ShowItemPage extends StatelessWidget {
               height: Sizes.height(context) / 2.5,
               width: Sizes.width(context),
               child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXJA32WU4rBpx7maglqeEtt3ot1tPIRWptxA&s',
+                itemsModel.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -36,7 +37,7 @@ class ShowItemPage extends StatelessWidget {
                 height: 50,
                 width: Sizes.width(context),
                 child: Text(
-                  'Title wlkedmw ewd kl wedekl wdwkled w ewjkdf ',
+                  itemsModel.title,
                   overflow: TextOverflow.fade,
                   style: TextStyle(
                     fontSize: Sizes.allSizes(context) / 70,
@@ -51,7 +52,7 @@ class ShowItemPage extends StatelessWidget {
                 // height: 50,
                 width: Sizes.width(context),
                 child: Text(
-                  'Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf Title wlkedmw ewd kl wedekl wdwkled w ewjkdf ',
+                  itemsModel.description,
                   style: TextStyle(
                     fontSize: Sizes.allSizes(context) / 90,
                   ),
@@ -59,7 +60,10 @@ class ShowItemPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            MyButton(title: 'Order Item', onPressed: () {}),
+            MyButton(
+              title: 'Order Item',
+              onPressed: () {},
+            ),
             const SizedBox(height: 30),
           ],
         ),
