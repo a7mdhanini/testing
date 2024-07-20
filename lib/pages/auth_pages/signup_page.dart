@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:testing/components/my_aleart_dialog.dart';
 import 'package:testing/components/my_button.dart';
 import 'package:testing/components/my_text_field.dart';
 import 'package:testing/constants/app_colors.dart';

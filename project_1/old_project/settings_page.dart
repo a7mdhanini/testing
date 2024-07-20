@@ -20,11 +20,11 @@ class SettingsPage extends StatelessWidget {
               options: CarouselOptions(
                 height: 200,
                 autoPlay: true,
-                autoPlayInterval: Duration(seconds: 5),
+                autoPlayInterval: const Duration(seconds: 5),
               ),
               items: [
                 Image.asset('assets/images/image_1.jpg'),
-                Text('hellooooo'),
+                const Text('hellooooo'),
                 Image.network(
                     'https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp')
               ],

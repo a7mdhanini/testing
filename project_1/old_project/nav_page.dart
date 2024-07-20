@@ -31,8 +31,8 @@ class _NavPageState extends State<NavPage> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.red,
         unselectedItemColor: Colors.grey,
-        selectedLabelStyle: TextStyle(color: Colors.red),
-        unselectedLabelStyle: TextStyle(color: Colors.grey),
+        selectedLabelStyle: const TextStyle(color: Colors.red),
+        unselectedLabelStyle: const TextStyle(color: Colors.grey),
         elevation: 1,
         // iconSize: 80,
         onTap: (index) {
@@ -40,7 +40,7 @@ class _NavPageState extends State<NavPage> {
             currentIndex = index;
           });
 
-          log('index: ' + index.toString());
+          log('index: $index');
         },
 
         items: const [

@@ -32,6 +32,12 @@
 	<string>Allow access to library to set profile picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow access to location</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>sms</string>
+	<string>tel</string>
+	</array>
+
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

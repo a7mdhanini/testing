@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'email_page.dart';
 
@@ -22,7 +23,9 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.phone, color: Colors.red),
             onPressed: () {
-              print('call');
+              if (kDebugMode) {
+                print('call');
+              }
             },
           ),
           IconButton(
@@ -45,10 +48,10 @@ class HomePage extends StatelessWidget {
       ///----Body
       body: Column(
         children: [
-          Text('Numbers List'),
+          const Text('Numbers List'),
           Expanded(
             child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 childAspectRatio: 0.8,
                 // crossAxisSpacing: 10.0,
@@ -63,7 +66,7 @@ class HomePage extends StatelessWidget {
                   // height: 100,
                   child: Text(
                     index.toString(),
-                    style: TextStyle(fontSize: 30, color: Colors.white),
+                    style: const TextStyle(fontSize: 30, color: Colors.white),
                   ),
                 );
               },
@@ -92,10 +95,10 @@ class Row2 extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Container 1'),
+                const Text('Container 1'),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('ok 1'),
+                  child: const Text('ok 1'),
                 ),
               ],
             ),
@@ -110,10 +113,10 @@ class Row2 extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Container 2'),
+                const Text('Container 2'),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('ok 2'),
+                  child: const Text('ok 2'),
                 ),
               ],
             ),

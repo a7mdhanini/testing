@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testing/components/my_app_bar.dart';
-import 'package:testing/components/my_button.dart';
 import 'package:testing/constants/app_sizes.dart';
 
 class ShowOrderPage extends StatelessWidget {
@@ -13,9 +12,9 @@ class ShowOrderPage extends StatelessWidget {
     return Scaffold(
       ///---AppBar
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: const Size.fromHeight(56),
         child: MyAppBar(
-          title: 'Item ' + itemId,
+          title: 'Item $itemId',
         ),
       ),
 

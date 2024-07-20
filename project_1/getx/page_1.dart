@@ -17,8 +17,8 @@ class Page1 extends StatelessWidget {
           children: [
             Obx(
               () => Text(
-                'Name: ' + Get.find<Page1Controller>().userModel.value.name,
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                'Name: ${Get.find<Page1Controller>().userModel.value.name}',
+                style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
 
@@ -26,8 +26,8 @@ class Page1 extends StatelessWidget {
               init: Page1Controller(),
               builder: (controller) {
                 return Text(
-                  'Number Is: ' + controller.userModel.value.number.toString(),
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  'Number Is: ${controller.userModel.value.number}',
+                  style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 );
               },
             ),
@@ -74,9 +74,9 @@ class Page1 extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Get.to(() => Page2(),
+                Get.to(() => const Page2(),
                     transition: Transition.fadeIn,
-                    duration: Duration(seconds: 3));
+                    duration: const Duration(seconds: 3));
               },
               child: const Text('Go To Page 2'),
             ),

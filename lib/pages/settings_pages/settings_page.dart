@@ -9,6 +9,8 @@ import 'package:testing/constants/app_sizes.dart';
 import 'package:testing/controllers/auth_crl/auth_crl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../conatact_us_pages/conatact_us_page.dart';
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
@@ -55,7 +57,12 @@ class SettingsPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             MySettingsButton(
-              onTap: () {},
+              onTap: () {
+                Route route =
+                    MaterialPageRoute(builder: (_) => const ConatactUsPage());
+
+                Navigator.push(context, route);
+              },
               title: 'Contact Us',
               icon: Icons.contact_support_rounded,
             ),

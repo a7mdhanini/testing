@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class EmailPage extends StatefulWidget {
@@ -20,26 +21,26 @@ class _EmailPageState extends State<EmailPage> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_sharp),
+            icon: const Icon(Icons.arrow_back_sharp),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Column(
             children: [
               Text(
                 widget.number.toString(),
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
 
-              Text(
+              const Text(
                 'Welcome',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 'You can send us an email using this page',
                 style: TextStyle(
                   fontSize: 20,
@@ -55,11 +56,13 @@ class _EmailPageState extends State<EmailPage> {
                 minLines: 10,
                 controller: nameCrl,
                 onChanged: (newVal) {
-                  print(newVal);
+                  if (kDebugMode) {
+                    print(newVal);
+                  }
                 },
                 // readOnly: true,
 
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Name',
                   hintStyle: TextStyle(color: Colors.amber),
                   border: UnderlineInputBorder(
@@ -85,9 +88,9 @@ class _EmailPageState extends State<EmailPage> {
                 ),
               ),
 
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -101,12 +104,12 @@ class _EmailPageState extends State<EmailPage> {
                 ),
               ),
 
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               ElevatedButton(
                 onPressed: () {
                   log(nameCrl.text);
                 },
-                child: Text('Print'),
+                child: const Text('Print'),
               ),
             ],
           ),
